@@ -1,5 +1,5 @@
-#include<stdio.h>
-
+#include <stdio.h>
+#include <stdlib.h>
 void Init(int osero[8][8]){
     for(int j=0;j<8;j++){
         for(int k=0;k<8;k++){
@@ -15,7 +15,7 @@ void Init(int osero[8][8]){
 }
 
 void display(int osero[8][8]){
-   
+    system("cls");
     for(int i=0;i<8;i++){
         printf(" %d",i);
     }
@@ -120,7 +120,7 @@ int main(void){
     int count_1=0,count_2=0;
     int again=0,turn=0,x=0,y=0;
     int j, k;
-    
+    system("chcp 65001");
     Init(osero);
     
     for(i=0;i<61;i++){
@@ -144,6 +144,7 @@ int main(void){
         
         /*cpu*/
         if(player==2){
+            printf("CPU(黒)の番です。入力してください。\n");
             for(j=0;j<8;j++){
                 for(k=0;k<8;k++){
                     if(check_putable(player,j,k,osero)) break;
@@ -159,8 +160,10 @@ int main(void){
         
         if(player==1){
             do{
-                printf("入力してください。\n");
+                printf("あなた(白)の番です。入力してください。\n");
+                printf("横列："); 
                 scanf("%d",&x);
+                printf("縦列："); 
                 scanf("%d",&y);
             }while(!check_putable(player,x,y,osero));
             osero[x][y]=player;
