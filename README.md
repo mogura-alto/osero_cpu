@@ -1,1 +1,1 @@
-This is the c language osero game code. You can play with command.
+これはc言語によるオセロゲームのソースコードです。このソースコードにはCPUが搭載されているため、一人で遊ぶことができます。
